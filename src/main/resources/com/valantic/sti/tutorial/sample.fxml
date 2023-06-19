@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      xmlns="http://javafx.com/javafx/17"
+      prefHeight="400.0"
+      prefWidth="600.0"
+      fx:controller="com.valantic.sti.tutorial.Controller">
+
+    <!-- binding -->
+    <Label text="Demonstrate binding"/>
+
+    <Label text="I love bacon" fx:id="firstLabel"/>
+    <Label text="${firstLabel.text}"/>
+
+    <Separator/>
+    <Label text="with 'ToggleGroup' as reusable component"/>
+
+    <!-- reusable components -->
+    <fx:define>
+        <ToggleGroup fx:id="toggleGroup"/>
+    </fx:define>
+
+    <RadioButton text="Easy" toggleGroup="$toggleGroup"/>
+    <RadioButton text="Medium" toggleGroup="$toggleGroup"/>
+    <RadioButton text="Hard" toggleGroup="$toggleGroup"/>
+
+    <Separator/>
+    <Label text="w/o 'ToggleGroup'"/>
+    
+    <RadioButton text="Easy"/>
+    <RadioButton text="Medium"/>
+    <RadioButton text="Hard"/>
+
+</VBox>
